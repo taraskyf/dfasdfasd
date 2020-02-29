@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Nav from './components/Nav/Nav';
 import ProfileContent from './components/ProfileContent/ProfileContent';
+import Dialogs from "./components/Dialogs/Dialogs";
 
 
 
@@ -11,7 +12,11 @@ const App = () => {
     <div className="app-wrapper">
       <Header />
       <Nav />
-      <ProfileContent />
+      <div className="app-wrapper-content">
+           <ProfileContent />
+          {/*<Dialogs />*/}
+      </div>
+
     </div>
   );
 }
