@@ -4,6 +4,12 @@
     padding: 10px;
 }
 
+.dialogs img {
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+}
+
 .dialogsItem {
     padding: 10px;
 }
@@ -18,8 +24,4 @@
 
 .messages {
     padding: 10px;
-}
-
-.message {
-
 }
