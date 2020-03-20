@@ -1,10 +1,20 @@
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import {renderTree} from "./render";
-import state from "./redax/state";
+import state, {subscribe} from "./redax/state";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import {addPost, updateNewPostText} from './redax/state'
 
+export let renderTree = (state) => {
+    ReactDOM.render(<App state={state} addPost={addPost} updateNewPostText={updateNewPostText} />,
+        document.getElementById('root'));
+}
 
 renderTree(state);
+
+subscribe(renderTree);
 
 
 

@@ -1,4 +1,7 @@
-import {renderTree} from "../render";
+
+let renderTree = () => {
+    console.log('state change')
+}
 
 let state = {
     profilePage: {
@@ -8,7 +11,9 @@ let state = {
             {message: "what", like: "0"},
             {message: "yot", like: "2"},
             {message: "I want ", like: "1"}
-        ], profileData: [
+        ],
+        newPostText: 'taras yo nigga',
+        profileData: [
             {name: "Taras", id: 1},
             {name: "Dima", id: 2},
             {name: "Andrey", id: 3},
@@ -27,10 +32,10 @@ let state = {
     }
 }
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
     let newPost =  {
         id: 5,
-        message: postMessage,
+        message: state.profilePage.newPostText,
         like:0
     };
     state.profilePage.postsData.push(newPost);
@@ -38,7 +43,15 @@ export let addPost = (postMessage) => {
     return state;
 }
 
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    renderTree(state);
+    return state;
+}
 
+export const subscribe = (observer) => {
+    renderTree = observer ;
+}
 
 
 export default state;
