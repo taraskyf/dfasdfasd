@@ -1,6 +1,10 @@
 import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redax/state";
+
+
+
 
 
 const MyPosts = (props) => {
@@ -10,12 +14,12 @@ const MyPosts = (props) => {
 
     let addPost = () => {
         let result = newPost.current.value;
-        props.dispatch({type: 'ADD-POST'});
+        props.dispatch(addPostActionCreator());
     }
 
     let onPostChange = () => {
         let result = newPost.current.value;
-        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: result});
+        props.dispatch(updateNewPostTextActionCreator(result));
     }
     return (
         <div className={s.posts}>

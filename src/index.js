@@ -5,10 +5,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {BrowserRouter} from "react-router-dom";
+
 
 export let renderTree = (state) => {
-    ReactDOM.render(<App state={state} dispatch={store.dispatch.bind(store)} />,
+    ReactDOM.render(<App store={store} state={state} dispatch={store.dispatch.bind(store)} />,
      document.getElementById('root'));
 }
 
